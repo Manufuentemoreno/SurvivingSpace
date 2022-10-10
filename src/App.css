@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.start-game{
+  border: none;
+  border-radius: 15px;
+  width: 380px;
+  height: 380px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  z-index: 20;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  top: 18px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.start-game h1{
+  text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000, 1px 1px 5px rgba(0,0,0,0);
 }
 
-@keyframes App-logo-spin {
-  from {
+.start-game button{
+  font-size: 30px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px -1px 9px rgba(30,231,91,0.41);
+}
+
+.start-game button:hover{
+  text-shadow: 2px 2px 0px white,
+               2px -2px 0px white,
+              -2px 2px 0px white,
+              -2px -2px 0px white, 
+               2px 0px 0px white, 
+               0px 2px 0px white, 
+              -2px 0px 0px white, 
+               0px -2px 0px white;
+  color: green;
+}
+
+.start-game p{
+  text-shadow: 0px 0px 5px rgb(3, 3, 3);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.portal-back{
+  z-index: -10;
+  position: absolute;
+  height: 400px;
+  top: 20px;
+  animation: portal 20s 3;
+}
+
+.started{
+  z-index: -10;
+}
+
+.score{
+  text-shadow: 4px 4px 4px rgba(0,0,0,0);
+}
+
+@keyframes portal {
+  0%{
+    height: 400px;
     transform: rotate(0deg);
   }
-  to {
+  30%{
+    height: 390px;
+  }
+  50%{
+    height: 410px;
+  }
+  70%{
+    height:395px;
+  }
+  100%{
+    height:400px;
     transform: rotate(360deg);
+  }
+}
+
+body{
+  background-image: url("./assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+@media (min-width: 1000px) {
+  body{
+    height: auto;
   }
 }
